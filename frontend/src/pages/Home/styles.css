@@ -1,0 +1,42 @@
+@import '../../global.css';
+
+.container{
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+img{
+  height: 520px;
+}
+form{
+  width: 100%;
+  max-width: 350px;
+
+  text-align: center;
+}
+.title{
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-bottom: 8px;
+}
+.subtitle{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
