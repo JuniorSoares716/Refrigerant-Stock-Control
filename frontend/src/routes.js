@@ -20,8 +20,6 @@ export default class Routes extends Component {
           <Route path="/cadastro" component={Cadastro} />
           <Route path="/listagem" component={Listagem} />
 
-
-
         </Switch>
       </BrowserRouter>
 
