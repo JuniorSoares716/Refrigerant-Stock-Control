@@ -1,0 +1,30 @@
+.container{
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+}
+
+table {
+  width:100%;
+  height:100%;
+  border:1px solid #C0C0C0;
+  border-collapse:collapse;
+  padding:5px;
+  text-align: center;
+}
+th {
+  padding:5px;
+  background-color:#5aadcc;
+  color:#FFFFFF;
+}
+td {
+  text-align:center;
+  padding:5px;
+  border:1px solid #FFFFF0
+}

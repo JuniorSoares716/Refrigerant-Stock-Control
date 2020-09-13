@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 
 // import api from '../../services/api';
@@ -9,13 +9,21 @@ import './styles.css';
 import imgHome from '../../assets/cadastroProduto.png';
 import api from '../../services/api';
 
+
+// Função para validar
+// function useFormik({
+//   initialValues
+// }) {
+//   console.log(initialValues);
+// }
+
 export default function Cadastro() {
 
 
   const [marca, setMarca] = useState('');
   const [litragem, setLitragem] = useState('250mL');
   const [tipo, setTipo] = useState('Pet');
-  const [quantidade, setQuantidade] = useState(0);
+  const [quantidade, setQuantidade] = useState('');
   const [valor, setValor] = useState('');
 
   const litrageValue = [
@@ -29,6 +37,15 @@ export default function Cadastro() {
     { id: 3, valor: 'Lata' },
   ]
 
+  const history = useHistory();
+  // Função para validar
+  // const formik = useFormik({
+  //   marca: '',
+  //   quantidade: 0,
+  //   valor: '',
+  // });
+
+
   async function handleRegister(event) {
     event.preventDefault();
     const data = ({
@@ -40,10 +57,12 @@ export default function Cadastro() {
 
     });
 
+
     try {
       const resp = await api.post('cadastrar', data);
 
       alert(`Cadastro realizado ${resp.data.marca}`);
+      history.push("/");
 
     } catch (error) {
       alert("Erro no cadastro");
@@ -62,12 +81,11 @@ export default function Cadastro() {
           <div className="img-home">
             <img src={imgHome} alt="Refrigerante" />
           </div>
-
         </section>
 
         <form onSubmit={handleRegister}>
 
-          <input placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} />
+          <input name="marca" placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} required />
 
           <select value={litragem} onChange={e => setLitragem(e.target.value)}>
             {litrageValue.map((item, index) => (
@@ -82,8 +100,8 @@ export default function Cadastro() {
             ))}
           </select>
 
-          <input placeholder="Quantidade" type="number" min="0" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
-          <input placeholder="Valor R$" value={valor} onChange={e => setValor(e.target.value)} />
+          <input name="quantidade" placeholder="Quantidade" type="number" min="0" required value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+          <input name="valor" placeholder="Valor R$" required value={valor} onChange={e => setValor(e.target.value)} />
 
           <button type="submit" className="myButton">Cadastrar</button>
         </form>

@@ -1,0 +1,17 @@
+.containe-list{
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+}
+.containe-list{
+  margin-top: 200px;
+}
+.home{
+  margin-bottom: 15px;
+}
+.loading{
+  margin: 0 auto;
+  text-align: center;
+}

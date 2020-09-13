@@ -7,7 +7,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
-import Listagem from './pages/Listagem';
+// import Listagem from './pages/Listagem';
+import Listagem from './pages/Lista';
+
 
 
 export default class Routes extends Component {
