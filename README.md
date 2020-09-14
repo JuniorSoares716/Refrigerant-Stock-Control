@@ -5,15 +5,14 @@ Sistema de controle de estoque de refrigerantes - "Em Andamento".
 # Entrar na pasta backend e executar
 
 
--yarn instalar as dependencias
+### yarn 
 
--npx knex migrate:latest  criação d banco de dados
+### npx knex migrate:latest
 
--yarn start executar o servidor
+### yarn start
 
-# Entrar na pasta do frontend
+# Entrar na pasta do frontend e executar
 
--yarn
+### yarn
 
--yarn start para executar o projeto
-
+### yarn start 
